@@ -30,13 +30,9 @@ public class Site {
         cl.nameClient = scanner.nextLine();
         System.out.println("Введіть пароль: ");
         cl.password = sc.nextLine();
-            /*if(cl.password.equals(ln)) {
                 Product pr = new Product();
-                pr.allproducts();
-            } else {
-                System.out.println("Не вірний пароль!");
-                autorizationOnSite();
-            }*/
+        System.out.println(pr.getNameProduct());
+            pr.product();
     }
     public void registrationOnSite() {
         Client cl = new Client();
@@ -51,6 +47,7 @@ public class Site {
             for (int j = 0; j < str.length; j++) {
                 str[i][j] = cl.nameClient + " " + cl.password;
                 System.out.println(str[i][j]);
+                autorizationOnSite();
             }
         }
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(database, true))){
